@@ -1,11 +1,12 @@
-package com.example.shashlickcompose
+package com.my.shashlik
 
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.content.ContextCompat
-import com.example.shashlickcompose.ui.theme.ShashlickComposeTheme
+import com.example.shashlickcompose.R
+import com.my.shashlik.ui.theme.ShashlickComposeTheme
 
 
 class MainActivity : ComponentActivity() {

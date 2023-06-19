@@ -1,4 +1,4 @@
-package com.example.shashlickcompose.cards_ui
+package com.my.shashlik.cards_ui
 
 
 import android.content.Context
@@ -8,20 +8,23 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.shashlickcompose.*
+import com.my.shashlik.*
 import com.example.shashlickcompose.R
-import com.example.shashlickcompose.ui.theme.CardTextColor
-import com.example.shashlickcompose.ui.theme.DarkButton
+import com.my.shashlik.ui.theme.CardTextColor
+import com.my.shashlik.ui.theme.DarkButton
 import kotlin.math.roundToInt
 
 
@@ -35,15 +38,25 @@ fun GetResultUI(context: Context) {
         mutableStateOf(res_text)
     }
 
+    val localDensity = LocalDensity.current
+    var buttonHeightDp = remember {
+        mutableStateOf(0.dp)
+    }
+
+
+
     Row() {
         Card(
+
+
             modifier = Modifier
-                .height(50.dp)
+                .height(buttonHeightDp.value)
                 .weight(1f)
                 .padding(start = 20.dp, end = 8.dp, bottom = 8.dp)
                 .alpha(0.95f),
-            shape = RoundedCornerShape(15.dp),
-            backgroundColor = Color.White
+            shape = RoundedCornerShape(40),
+            backgroundColor = Color.White,
+
         ) {
 
 
@@ -60,10 +73,15 @@ fun GetResultUI(context: Context) {
 
         }
 
+
+
         Button(
             modifier = Modifier
-                .height(50.dp)
+                .onGloballyPositioned { coordinates ->
+                    buttonHeightDp.value = with(localDensity) { coordinates.size.height.toDp() }
+                }
                 .wrapContentWidth()
+                .wrapContentHeight(Alignment.CenterVertically)
                 .padding(end = 20.dp, bottom = 8.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = DarkButton),
             shape = RoundedCornerShape(40),

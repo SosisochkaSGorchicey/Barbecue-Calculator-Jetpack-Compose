@@ -1,6 +1,7 @@
-package com.example.shashlickcompose
+package com.my.shashlik
 
 import androidx.compose.ui.text.font.Font
+import com.example.shashlickcompose.R
 import androidx.compose.ui.text.font.FontFamily
 
 fun getMainFont(): FontFamily {

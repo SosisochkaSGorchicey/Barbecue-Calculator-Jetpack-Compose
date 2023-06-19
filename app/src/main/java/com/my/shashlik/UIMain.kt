@@ -1,4 +1,4 @@
-package com.example.shashlickcompose
+package com.my.shashlik
 
 
 import android.content.Context

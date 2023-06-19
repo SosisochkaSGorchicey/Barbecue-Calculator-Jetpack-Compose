@@ -1,4 +1,4 @@
-package com.example.shashlickcompose.cards_ui
+package com.my.shashlik.cards_ui
 
 
 import androidx.compose.foundation.Image
@@ -15,9 +15,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.shashlickcompose.*
+import com.my.shashlik.*
 import com.example.shashlickcompose.R
-import com.example.shashlickcompose.ui.theme.CardTextColor
+import com.my.shashlik.ui.theme.CardTextColor
 
 
 @Composable

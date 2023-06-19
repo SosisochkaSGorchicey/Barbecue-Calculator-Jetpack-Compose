@@ -1,4 +1,4 @@
-package com.example.shashlickcompose.ui.theme
+package com.my.shashlik.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -33,7 +33,7 @@ fun ShashlickComposeTheme(
     content: @Composable () -> Unit
 ) {
     val colors = if (darkTheme) {
-        DarkColorPalette
+        LightColorPalette
     } else {
         LightColorPalette
     }

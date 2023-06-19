@@ -1,4 +1,4 @@
-package com.example.shashlickcompose.cards_ui
+package com.my.shashlik.cards_ui
 
 
 import androidx.compose.foundation.layout.*
@@ -12,10 +12,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.shashlickcompose.*
+import com.my.shashlik.*
 import com.example.shashlickcompose.R
-import com.example.shashlickcompose.ui.theme.BackgroundColor
-import com.example.shashlickcompose.ui.theme.CardTextColor
+import com.my.shashlik.ui.theme.BackgroundColor
+import com.my.shashlik.ui.theme.CardTextColor
 
 @Composable
 fun ChoseTimeUI() {

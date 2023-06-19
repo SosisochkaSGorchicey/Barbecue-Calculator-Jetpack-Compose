@@ -1,4 +1,4 @@
-package com.example.shashlickcompose
+package com.my.shashlik
 
 import android.content.Context
 import androidx.compose.foundation.*
@@ -17,8 +17,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.example.shashlickcompose.cards_ui.*
-import com.example.shashlickcompose.ui.theme.BackgroundColor
+import com.example.shashlickcompose.R
+import com.my.shashlik.cards_ui.*
+import com.my.shashlik.ui.theme.BackgroundColor
 
 
 @Composable

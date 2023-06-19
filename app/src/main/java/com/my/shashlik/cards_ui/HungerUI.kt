@@ -1,4 +1,4 @@
-package com.example.shashlickcompose.cards_ui
+package com.my.shashlik.cards_ui
 
 
 import android.view.LayoutInflater
@@ -13,9 +13,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.example.shashlickcompose.*
 import com.example.shashlickcompose.R
-import com.example.shashlickcompose.ui.theme.*
+import com.my.shashlik.*
+import com.my.shashlik.ui.theme.*
 
 
 // Hunger

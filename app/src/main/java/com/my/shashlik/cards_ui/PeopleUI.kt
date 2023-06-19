@@ -1,4 +1,4 @@
-package com.example.shashlickcompose.cards_ui
+package com.my.shashlik.cards_ui
 
 
 import androidx.compose.foundation.Image
@@ -21,12 +21,12 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.shashlickcompose.R
-import com.example.shashlickcompose.getMainFont
-import com.example.shashlickcompose.getTitleFont
-import com.example.shashlickcompose.res_people
-import com.example.shashlickcompose.ui.theme.CardTextColor
-import com.example.shashlickcompose.ui.theme.CardTextColorHint
-import com.example.shashlickcompose.ui.theme.NoColor
+import com.my.shashlik.getMainFont
+import com.my.shashlik.getTitleFont
+import com.my.shashlik.res_people
+import com.my.shashlik.ui.theme.CardTextColor
+import com.my.shashlik.ui.theme.CardTextColorHint
+import com.my.shashlik.ui.theme.NoColor
 
 
 // People
