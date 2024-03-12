@@ -5,24 +5,25 @@ plugins {
 
 android {
     namespace 'com.example.shashlickcompose'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.my.shashlik"
         minSdk 21
-        targetSdk 33
-        versionCode 6
-        versionName "6.0"
+        targetSdk 34
+        versionCode 7
+        versionName "7.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
         }
+        signingConfig signingConfigs.debug
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
