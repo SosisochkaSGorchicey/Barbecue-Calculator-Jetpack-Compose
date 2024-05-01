@@ -4,18 +4,23 @@ package com.my.shashlik.cards_ui
 import android.view.LayoutInflater
 import android.widget.SeekBar
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.example.shashlickcompose.R
-import com.my.shashlik.*
-import com.my.shashlik.ui.theme.*
+import com.my.shashlik.hunger_l
+import com.my.shashlik.hunger_m
+import com.my.shashlik.hunger_none
+import com.my.shashlik.hunger_s
+import com.my.shashlik.res_hunger
+import com.my.shashlik.ui.theme.CardTextColor
 
 
 // Hunger
@@ -32,8 +37,7 @@ fun ChoseHungerUI() {
             modifier = Modifier
                 .padding(top = 5.dp, start = 13.dp, end = 13.dp),
             color = CardTextColor,
-            fontSize = 18.sp,
-            style = TextStyle(fontFamily = getTitleFont())
+            style = MaterialTheme.typography.titleMedium
         )
 
         AndroidView(

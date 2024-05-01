@@ -1,11 +1,17 @@
 package com.my.shashlik
 
 import android.content.Context
-import androidx.compose.foundation.*
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,13 +19,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.shashlickcompose.R
-import com.my.shashlik.cards_ui.*
+import com.my.shashlik.cards_ui.ChoseHungerUI
+import com.my.shashlik.cards_ui.ChoseMeatUI
+import com.my.shashlik.cards_ui.ChosePeopleUI
+import com.my.shashlik.cards_ui.ChoseTimeUI
+import com.my.shashlik.cards_ui.GetResultUI
 import com.my.shashlik.ui.theme.BackgroundColor
 
 
@@ -39,7 +47,6 @@ fun ConstraintLayoutContent(context: Context) {
         // ***** MAIN TEXT *****
         Text(
             text = stringResource(R.string.title),
-            fontSize = 20.sp,
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(text) {
@@ -48,7 +55,7 @@ fun ConstraintLayoutContent(context: Context) {
                 .padding(top = 10.dp, start = 20.dp, end = 20.dp),
             textAlign = TextAlign.Center,
             color = Color.White,
-            style = TextStyle(fontFamily = getTitleFont()),
+            style = MaterialTheme.typography.titleLarge
         )
 
 

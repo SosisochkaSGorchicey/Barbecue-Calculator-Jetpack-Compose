@@ -1,21 +1,5 @@
 package com.my.shashlik
 
-import androidx.compose.ui.text.font.Font
-import com.example.shashlickcompose.R
-import androidx.compose.ui.text.font.FontFamily
-
-fun getMainFont(): FontFamily {
-    return FontFamily(
-        Font(R.font.poiret_one)
-    )
-}
-
-fun getTitleFont(): FontFamily {
-    return FontFamily(
-        Font(R.font.neucha_regular)
-    )
-}
-
 const val cow_meat_type = 0.3
 const val chicken_meat_type = 0.35
 const val pig_meat_type = 0.3

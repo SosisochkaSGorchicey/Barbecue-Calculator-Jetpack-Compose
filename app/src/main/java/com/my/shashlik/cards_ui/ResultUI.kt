@@ -13,6 +13,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -25,11 +26,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.shashlickcompose.R
-import com.my.shashlik.getTitleFont
 import com.my.shashlik.res_hunger
 import com.my.shashlik.res_meat
 import com.my.shashlik.res_people
@@ -80,8 +78,7 @@ fun GetResultUI(context: Context) {
                     .padding(start = 13.dp),
                 text = result.value,
                 color = CardTextColor,
-                style = TextStyle(fontFamily = getTitleFont()),
-                fontSize = 18.sp,
+                style = MaterialTheme.typography.titleMedium
             )
 
         }
@@ -122,9 +119,8 @@ fun GetResultUI(context: Context) {
         ) {
             Text(
                 text = stringResource(R.string.count),
-                style = TextStyle(fontFamily = getTitleFont()),
+                style = MaterialTheme.typography.titleMedium,
                 color = Color.White,
-                fontSize = 18.sp,
             )
 
         }

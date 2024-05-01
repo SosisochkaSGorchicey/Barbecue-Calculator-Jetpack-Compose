@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Text
@@ -16,12 +17,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.shashlickcompose.R
-import com.my.shashlik.getMainFont
-import com.my.shashlik.getTitleFont
 import com.my.shashlik.res_time
 import com.my.shashlik.time_l_type
 import com.my.shashlik.time_m_type
@@ -39,8 +36,7 @@ fun ChoseTimeUI() {
             modifier = Modifier
                 .padding(top = 5.dp, start = 13.dp, end = 13.dp),
             color = CardTextColor,
-            fontSize = 18.sp,
-            style = TextStyle(fontFamily = getTitleFont())
+            style = MaterialTheme.typography.titleMedium
         )
 
         val time_s = stringResource(R.string.length_s)
@@ -88,8 +84,7 @@ fun ChoseTimeUI() {
                     Text(
                         modifier = Modifier.wrapContentHeight(),
                         text = text,
-                        fontSize = 16.sp,
-                        style = TextStyle(fontFamily = getMainFont())
+                        style = MaterialTheme.typography.displayMedium
                     )
                 }
             }

@@ -3,7 +3,13 @@ package com.my.shashlik.cards_ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -12,11 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.my.shashlik.*
 import com.example.shashlickcompose.R
+import com.my.shashlik.chicken_meat_type
+import com.my.shashlik.cow_meat_type
+import com.my.shashlik.pig_meat_type
+import com.my.shashlik.res_meat
+import com.my.shashlik.sheep_meat_type
 import com.my.shashlik.ui.theme.CardTextColor
 
 
@@ -29,8 +37,7 @@ fun ChoseMeatUI() {
             modifier = Modifier
                 .padding(top = 5.dp, start = 13.dp, end = 13.dp),
             color = CardTextColor,
-            fontSize = 18.sp,
-            style = TextStyle(fontFamily = getTitleFont())
+            style = MaterialTheme.typography.titleMedium
         )
 
         Row(
