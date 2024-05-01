@@ -4,8 +4,9 @@ import android.content.Context
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -61,7 +62,9 @@ fun ConstraintLayoutContent(context: Context) {
                 }
                 .padding(top = 10.dp, start = 20.dp, end = 20.dp),
             shape = RoundedCornerShape(25.dp),
-            backgroundColor = Color.White
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            )
         ) {
             ChoseMeatUI()
         }
@@ -77,7 +80,9 @@ fun ConstraintLayoutContent(context: Context) {
                 .alpha(0.95f)
                 .padding(top = 18.dp, start = 20.dp, end = 20.dp),
             shape = RoundedCornerShape(25.dp),
-            backgroundColor = Color.White
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            )
         ) {
             ChosePeopleUI()
         }
@@ -93,7 +98,9 @@ fun ConstraintLayoutContent(context: Context) {
                 .alpha(0.95f)
                 .padding(top = 18.dp, start = 20.dp, end = 20.dp),
             shape = RoundedCornerShape(25.dp),
-            backgroundColor = Color.White
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            )
         ) {
             ChoseTimeUI()
         }
@@ -109,7 +116,9 @@ fun ConstraintLayoutContent(context: Context) {
                     top.linkTo(time.bottom)
                 },
             shape = RoundedCornerShape(25.dp),
-            backgroundColor = Color.White
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            )
         ) {
             ChoseHungerUI()
         }

@@ -3,9 +3,17 @@ package com.my.shashlik.cards_ui
 
 import android.content.Context
 import android.widget.Toast
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -18,11 +26,14 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.my.shashlik.*
 import com.example.shashlickcompose.R
+import com.my.shashlik.getTitleFont
+import com.my.shashlik.res_hunger
+import com.my.shashlik.res_meat
+import com.my.shashlik.res_people
+import com.my.shashlik.res_time
 import com.my.shashlik.ui.theme.CardTextColor
 import com.my.shashlik.ui.theme.DarkButton
 import kotlin.math.roundToInt
@@ -55,7 +66,9 @@ fun GetResultUI(context: Context) {
                 .padding(start = 20.dp, end = 8.dp, bottom = 8.dp)
                 .alpha(0.95f),
             shape = RoundedCornerShape(40),
-            backgroundColor = Color.White,
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            )
 
         ) {
 
@@ -83,7 +96,7 @@ fun GetResultUI(context: Context) {
                 .wrapContentWidth()
                 .wrapContentHeight(Alignment.CenterVertically)
                 .padding(end = 20.dp, bottom = 8.dp),
-            colors = ButtonDefaults.buttonColors(backgroundColor = DarkButton),
+            colors = ButtonDefaults.buttonColors(containerColor = DarkButton),
             shape = RoundedCornerShape(40),
             onClick = {
                 if (res_meat == 0.0 || res_people == 0) {
