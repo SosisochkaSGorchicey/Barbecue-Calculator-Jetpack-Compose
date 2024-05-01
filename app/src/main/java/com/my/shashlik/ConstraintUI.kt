@@ -54,7 +54,6 @@ fun ConstraintLayoutContent(context: Context) {
                 }
                 .padding(top = 10.dp, start = 20.dp, end = 20.dp),
             textAlign = TextAlign.Center,
-            color = Color.White,
             style = MaterialTheme.typography.titleLarge
         )
 
