@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Shashlick Compose"
-include ':app'
+include(":app")

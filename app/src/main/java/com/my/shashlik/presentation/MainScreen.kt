@@ -9,15 +9,22 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.shashlickcompose.R
 import com.my.shashlik.presentation.components.CardElement
 import com.my.shashlik.presentation.components.Header
+import com.my.shashlik.presentation.components.chooseMeat.ChooseMeatUI
+import com.my.shashlik.presentation.mvi.MainViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun MainScreen() {
+fun MainScreen(mainViewModel: MainViewModel = koinViewModel()) {
+    val state by mainViewModel.container.stateFlow.collectAsState()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -37,7 +44,9 @@ fun MainScreen() {
 
             CardElement(
                 titleTextRes = R.string.choose_meat,
-                content =
+                content = {
+                    ChooseMeatUI(state = state)
+                },
             )
         }
 
