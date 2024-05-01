@@ -4,7 +4,6 @@ package com.my.shashlik.cards_ui
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -25,18 +24,15 @@ import com.my.shashlik.cow_meat_type
 import com.my.shashlik.pig_meat_type
 import com.my.shashlik.res_meat
 import com.my.shashlik.sheep_meat_type
-import com.my.shashlik.ui.theme.CardTextColor
 
 
 @Composable
 fun ChoseMeatUI() {
-    Column() {
 
         Text(
             text = stringResource(R.string.choose_meat),
             modifier = Modifier
                 .padding(top = 5.dp, start = 13.dp, end = 13.dp),
-            color = CardTextColor,
             style = MaterialTheme.typography.titleMedium
         )
 
@@ -160,5 +156,4 @@ fun ChoseMeatUI() {
 
             )
         }
-    }
 }

@@ -10,13 +10,15 @@ import androidx.compose.ui.graphics.Color
 private val DarkColorPalette = darkColorScheme(
     background = BackgroundColor,
     onBackground = Color.White,
-    onPrimary = Color.White
+    surfaceVariant = Color.White,
+    onSurfaceVariant = CardTextColor
 )
 
 private val LightColorPalette = lightColorScheme(
     background = BackgroundColor,
     onBackground = Color.White,
-    onPrimary = Color.White
+    surfaceVariant = Color.White,
+    onSurfaceVariant = CardTextColor
 )
 
 @Composable

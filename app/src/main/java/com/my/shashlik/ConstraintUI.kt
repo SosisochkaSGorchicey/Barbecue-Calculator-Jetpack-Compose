@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.shashlickcompose.R
 import com.my.shashlik.cards_ui.ChoseHungerUI
-import com.my.shashlik.cards_ui.ChoseMeatUI
 import com.my.shashlik.cards_ui.ChosePeopleUI
 import com.my.shashlik.cards_ui.ChoseTimeUI
 import com.my.shashlik.cards_ui.GetResultUI
@@ -59,21 +58,7 @@ fun ConstraintLayoutContent(context: Context) {
 
 
         // ***** MEAT *****
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .alpha(0.95f)
-                .constrainAs(meat) {
-                    top.linkTo(text.bottom)
-                }
-                .padding(top = 10.dp, start = 20.dp, end = 20.dp),
-            shape = RoundedCornerShape(25.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = Color.White
-            )
-        ) {
-            ChoseMeatUI()
-        }
+
 
 
         // ***** PEOPLE *****
