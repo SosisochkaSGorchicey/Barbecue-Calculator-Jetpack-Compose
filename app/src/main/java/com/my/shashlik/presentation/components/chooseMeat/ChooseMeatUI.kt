@@ -8,36 +8,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.shashlickcompose.R
-import com.my.shashlik.presentation.mvi.MainScreenState
 
 @Composable
-fun ChooseMeatUI(
-    state: MainScreenState
-) {
+fun ChooseMeatUI() {
     Row(
         modifier = Modifier
             .padding(4.dp)
             .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceAround
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         MeatImage(
-            imageRes = R.drawable.cow,
-            state = state
+            imageRes = R.drawable.cow
         )
 
         MeatImage(
-            imageRes = R.drawable.chicken,
-            state = state
+            imageRes = R.drawable.chicken
         )
 
         MeatImage(
-            imageRes = R.drawable.pig,
-            state = state
+            imageRes = R.drawable.pig
         )
 
         MeatImage(
             imageRes = R.drawable.sheep,
-            state = state
         )
     }
 }
