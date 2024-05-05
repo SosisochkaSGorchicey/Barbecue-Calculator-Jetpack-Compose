@@ -28,7 +28,7 @@ fun RowScope.MeatImage(
 
     Image(
         modifier = Modifier
-            .clip(shape = RoundedCornerShape(24.dp))
+            .clip(shape = RoundedCornerShape(22.dp))
             .weight(1f)
             .background(
                 if (state.chosenImageRes == imageRes) CardTextColorHint
