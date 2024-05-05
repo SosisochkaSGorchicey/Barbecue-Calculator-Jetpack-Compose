@@ -10,7 +10,7 @@
     <string name="length_m">На целый вечер</string>
     <string name="length_l">Будем сидеть до победного!</string>
     <string name="choose_hunger">Уровень общего голода:</string>
-    <string name="result">"Результат: "</string>
+    <string name="result">Результат: %d</string>
     <string name="count">Посчитать</string>
     <string name="toast">Пожалуйста, заполните все поля!</string>
     <string name="kilo">кг</string>

@@ -13,7 +13,9 @@ private val DarkColorPalette = darkColorScheme(
     onBackground = Color.White,
     surfaceVariant = Color.White,
     onSurfaceVariant = CardTextColor,
-    onSecondary = CardTextColorHint
+    onSecondary = CardTextColorHint,
+    secondaryContainer = DarkButton,
+    onSecondaryContainer = Color.White
 )
 
 private val LightColorPalette = lightColorScheme(
@@ -22,7 +24,9 @@ private val LightColorPalette = lightColorScheme(
     onBackground = Color.White,
     surfaceVariant = Color.White,
     onSurfaceVariant = CardTextColor,
-    onSecondary = CardTextColorHint
+    onSecondary = CardTextColorHint,
+    secondaryContainer = DarkButton,
+    onSecondaryContainer = Color.White
 )
 
 @Composable
