@@ -16,6 +16,7 @@ import com.example.shashlickcompose.R
 import com.my.shashlik.presentation.components.CardElement
 import com.my.shashlik.presentation.components.Header
 import com.my.shashlik.presentation.components.chooseMeat.ChooseMeatUI
+import com.my.shashlik.presentation.components.choosePeople.ChoosePeopleUI
 
 @Composable
 fun MainScreen() {
@@ -36,12 +37,13 @@ fun MainScreen() {
         ) {
             Header()
 
-            CardElement(
-                titleTextRes = R.string.choose_meat,
-                content = {
-                    ChooseMeatUI()
-                },
-            )
+            CardElement(titleTextRes = R.string.choose_meat) {
+                ChooseMeatUI()
+            }
+
+            CardElement(titleTextRes = R.string.choose_people) {
+                ChoosePeopleUI()
+            }
         }
 
         Header() //.padding(top = 20.dp)

@@ -11,14 +11,16 @@ private val DarkColorPalette = darkColorScheme(
     background = BackgroundColor,
     onBackground = Color.White,
     surfaceVariant = Color.White,
-    onSurfaceVariant = CardTextColor
+    onSurfaceVariant = CardTextColor,
+    onSecondary = CardTextColorHint
 )
 
 private val LightColorPalette = lightColorScheme(
     background = BackgroundColor,
     onBackground = Color.White,
     surfaceVariant = Color.White,
-    onSurfaceVariant = CardTextColor
+    onSurfaceVariant = CardTextColor,
+    onSecondary = CardTextColorHint
 )
 
 @Composable
