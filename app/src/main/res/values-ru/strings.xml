@@ -5,7 +5,7 @@
     <string name="choose_meat">Выберите вид мяса:</string>
     <string name="choose_people">Сколько человек будет есть?</string>
     <string name="people_hint">Введите число</string>
-    <string name="choose_length">Насколько долгая планируется посиделка?</string>
+    <string name="choose_time">Насколько долгая планируется посиделка?</string>
     <string name="length_s">Быстро поели и домой!</string>
     <string name="length_m">На целый вечер</string>
     <string name="length_l">Будем сидеть до победного!</string>

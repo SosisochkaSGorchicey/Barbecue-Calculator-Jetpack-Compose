@@ -4,7 +4,7 @@
     <string name="choose_meat">Choose the type of meat:</string>
     <string name="choose_people">How many people will eat?</string>
     <string name="people_hint">Enter a number</string>
-    <string name="choose_length">How long is the planned get-together?</string>
+    <string name="choose_time">How long is the planned get-together?</string>
     <string name="length_s">Let\'s eat quickly and go home!</string>
     <string name="length_m">For the whole evening</string>
     <string name="length_l">We\'re going full send on barbecuing tonight!</string>

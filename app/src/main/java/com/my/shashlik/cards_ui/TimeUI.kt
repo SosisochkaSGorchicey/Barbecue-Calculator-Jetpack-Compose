@@ -32,7 +32,7 @@ fun ChoseTimeUI() {
     Column {
 
         Text(
-            text = stringResource(R.string.choose_length),
+            text = stringResource(R.string.choose_time),
             modifier = Modifier
                 .padding(top = 5.dp, start = 13.dp, end = 13.dp),
             color = CardTextColor,

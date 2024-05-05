@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.my.shashlik.cards_ui.ChoseHungerUI
-import com.my.shashlik.cards_ui.ChosePeopleUI
 import com.my.shashlik.cards_ui.ChoseTimeUI
 import com.my.shashlik.cards_ui.GetResultUI
 import com.my.shashlik.ui.theme.BackgroundColor
@@ -36,24 +35,6 @@ fun ConstraintLayoutContent(context: Context) {
     ) {
 
         val (text, meat, people, time, hunger, resultCard) = createRefs()
-
-        // ***** PEOPLE *****
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .constrainAs(people) {
-                    top.linkTo(meat.bottom)
-                }
-                .alpha(0.95f)
-                .padding(top = 18.dp, start = 20.dp, end = 20.dp),
-            shape = RoundedCornerShape(25.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = Color.White
-            )
-        ) {
-            ChosePeopleUI()
-        }
-
 
         // ***** TIME *****
         Card(

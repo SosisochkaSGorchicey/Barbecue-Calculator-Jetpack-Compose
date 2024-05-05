@@ -14,6 +14,7 @@ class MainViewModel : MviViewModel<MainScreenState, Any, MainScreenEvent>(
         when (event) {
             is MainScreenEvent.OnMeatClick -> changeCurrentMeatType(newImageRes = event.newImageRes)
             is MainScreenEvent.OnPeopleAmountChange -> changePeopleAmount(event.newAmount)
+            is MainScreenEvent.OnTimeCoefChange -> changeTimeCoef(event.newTimeCoef)
         }
     }
 
@@ -27,6 +28,12 @@ class MainViewModel : MviViewModel<MainScreenState, Any, MainScreenEvent>(
     private fun changePeopleAmount(newPeopleAmount: Int) = blockingIntent {
         reduce {
             state.copy(peopleAmount = newPeopleAmount)
+        }
+    }
+
+    private fun changeTimeCoef(newTimeCoef: Double) = intent {
+        reduce {
+            state.copy(chosenTimeCoef = newTimeCoef)
         }
     }
 }
