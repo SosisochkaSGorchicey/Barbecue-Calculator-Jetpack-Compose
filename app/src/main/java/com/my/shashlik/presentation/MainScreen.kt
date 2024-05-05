@@ -19,6 +19,7 @@ import com.my.shashlik.presentation.components.chooseHunger.ChooseHungerUI
 import com.my.shashlik.presentation.components.chooseMeat.ChooseMeatUI
 import com.my.shashlik.presentation.components.choosePeople.ChoosePeopleUI
 import com.my.shashlik.presentation.components.chooseTime.ChooseTimeUI
+import com.my.shashlik.presentation.components.result.ResultUI
 
 @Composable
 fun MainScreen() {
@@ -56,6 +57,6 @@ fun MainScreen() {
             }
         }
 
-        Header() //.padding(top = 20.dp)
+        ResultUI()
     }
 }

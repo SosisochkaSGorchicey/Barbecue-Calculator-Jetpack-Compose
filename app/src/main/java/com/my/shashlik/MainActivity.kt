@@ -14,7 +14,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             ShashlickComposeTheme {
                 MainScreen()
-                //MainLayout(this)
             }
         }
     }

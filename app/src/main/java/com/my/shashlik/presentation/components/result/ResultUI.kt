@@ -1,10 +1,6 @@
-package com.my.shashlik.cards_ui
+package com.my.shashlik.presentation.components.result
 
-
-import android.content.Context
-import android.widget.Toast
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -16,50 +12,23 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shashlickcompose.R
-import com.my.shashlik.res_hunger
 import com.my.shashlik.res_meat
 import com.my.shashlik.res_people
-import com.my.shashlik.res_time
 import com.my.shashlik.ui.theme.CardTextColor
 import com.my.shashlik.ui.theme.DarkButton
-import kotlin.math.roundToInt
-
 
 @Composable
-fun GetResultUI(context: Context) {
-
-
-    val res_text = stringResource(id = R.string.result)
-    val kilo = stringResource(R.string.kilo)
-    val result = rememberSaveable {
-        mutableStateOf(res_text)
-    }
-
-    val localDensity = LocalDensity.current
-    var buttonHeightDp = remember {
-        mutableStateOf(0.dp)
-    }
-
-
-
+fun ResultUI() {
     Row() {
         Card(
-
-
             modifier = Modifier
-                .height(buttonHeightDp.value)
                 .weight(1f)
                 .padding(start = 20.dp, end = 8.dp, bottom = 8.dp)
                 .alpha(0.95f),
@@ -76,7 +45,7 @@ fun GetResultUI(context: Context) {
                     .weight(1f)
                     .wrapContentHeight(Alignment.CenterVertically)
                     .padding(start = 13.dp),
-                text = result.value,
+                text = "result.value",
                 color = CardTextColor,
                 style = MaterialTheme.typography.titleMedium
             )
@@ -87,9 +56,6 @@ fun GetResultUI(context: Context) {
 
         Button(
             modifier = Modifier
-                .onGloballyPositioned { coordinates ->
-                    buttonHeightDp.value = with(localDensity) { coordinates.size.height.toDp() }
-                }
                 .wrapContentWidth()
                 .wrapContentHeight(Alignment.CenterVertically)
                 .padding(end = 20.dp, bottom = 8.dp),
@@ -97,23 +63,23 @@ fun GetResultUI(context: Context) {
             shape = RoundedCornerShape(40),
             onClick = {
                 if (res_meat == 0.0 || res_people == 0) {
-                    Toast.makeText(
-                        context,
-                        R.string.toast,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    result.value = res_text
-                } else if (res_people<1 || res_people>50) {
-                    result.value = res_text
-                    Toast.makeText(
-                        context,
-                        R.string.toast_people,
-                        Toast.LENGTH_SHORT
-                    ).show()
+//                        Toast.makeText(
+//                            context,
+//                            R.string.toast,
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                        result.value = res_text
+                } else if (res_people <1 || res_people >50) {
+//                        result.value = res_text
+//                        Toast.makeText(
+//                            context,
+//                            R.string.toast_people,
+//                            Toast.LENGTH_SHORT
+//                        ).show()
                 } else {
-                    var helper = (res_people.toDouble()*(res_meat+res_time+res_hunger))
-                    helper = (helper*100).roundToInt() / 100.0
-                    result.value = "$res_text $helper $kilo"
+//                        var helper = (res_people.toDouble()*(res_meat + res_time + res_hunger))
+//                        helper = (helper*100).roundToInt() / 100.0
+//                        result.value = "$res_text $helper $kilo"
                 }
             },
         ) {
