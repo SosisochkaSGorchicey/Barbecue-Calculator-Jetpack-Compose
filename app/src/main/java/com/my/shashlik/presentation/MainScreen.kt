@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.shashlickcompose.R
 import com.my.shashlik.presentation.components.CardElement
 import com.my.shashlik.presentation.components.Header
+import com.my.shashlik.presentation.components.chooseHunger.ChooseHungerUI
 import com.my.shashlik.presentation.components.chooseMeat.ChooseMeatUI
 import com.my.shashlik.presentation.components.choosePeople.ChoosePeopleUI
 import com.my.shashlik.presentation.components.chooseTime.ChooseTimeUI
@@ -48,6 +49,10 @@ fun MainScreen() {
 
             CardElement(titleTextRes = R.string.choose_time) {
                 ChooseTimeUI()
+            }
+
+            CardElement(titleTextRes = R.string.choose_hunger) {
+                ChooseHungerUI()
             }
         }
 
