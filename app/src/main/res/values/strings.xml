@@ -9,10 +9,9 @@
     <string name="length_m">For the whole evening</string>
     <string name="length_l">We\'re going full send on barbecuing tonight!</string>
     <string name="choose_hunger">The level of general hunger:</string>
-    <string name="result">Result: %d</string>
+    <string name="result">Result: %d kg</string>
     <string name="result_empty">Result:</string>
     <string name="count">Calculate</string>
-    <string name="toast">Please, fill all information!</string>
-    <string name="kilo">kg</string>
+    <string name="toast_not_all_filled">Please, fill all information!</string>
     <string name="toast_people">The number of people should be from 1 to 50</string>
 </resources>

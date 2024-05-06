@@ -5,6 +5,7 @@ import com.example.shashlickcompose.R
 import org.orbitmvi.orbit.annotation.OrbitExperimental
 import org.orbitmvi.orbit.syntax.simple.blockingIntent
 import org.orbitmvi.orbit.syntax.simple.intent
+import org.orbitmvi.orbit.syntax.simple.postSideEffect
 import org.orbitmvi.orbit.syntax.simple.reduce
 
 class MainViewModel : MviViewModel<MainScreenState, Any, MainScreenEvent>(
@@ -16,6 +17,7 @@ class MainViewModel : MviViewModel<MainScreenState, Any, MainScreenEvent>(
             is MainScreenEvent.OnPeopleAmountChange -> changePeopleAmount(event.newAmount)
             is MainScreenEvent.OnTimeCoefChange -> changeTimeCoef(event.newTimeCoef)
             is MainScreenEvent.OnHungerSliderChange -> changeSliderPosition(event.newSliderValue)
+            MainScreenEvent.CountResult -> resultCount()
         }
     }
 
@@ -52,6 +54,18 @@ class MainViewModel : MviViewModel<MainScreenState, Any, MainScreenEvent>(
                 in 25f..50f -> state.copy(currentSliderThumbImageRes = R.drawable.face_f2)
                 in 50f..75f -> state.copy(currentSliderThumbImageRes = R.drawable.face_f3)
                 else -> state.copy(currentSliderThumbImageRes = R.drawable.face_f4)
+            }
+        }
+    }
+
+    private fun resultCount() = intent {
+        when {
+            state.peopleAmount == 0 -> postSideEffect(MainScreenSideEffect.ShowNoPeopleAmountErrorSnackBar)
+            state.peopleAmount !in 1..50 -> postSideEffect(MainScreenSideEffect.ShowAmountErrorSnackBar)
+            else -> {
+                with (state) {
+                    peopleAmount * (1+chosenTimeCoef)
+                }
             }
         }
     }

@@ -51,7 +51,6 @@ android {
 
 dependencies {
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-
     implementation("androidx.core:core-ktx:1.13.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.9.0")
@@ -61,6 +60,7 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.appcompat:appcompat-resources:1.6.1")
     implementation("org.orbit-mvi:orbit-core:6.1.1")
+    implementation("org.orbit-mvi:orbit-compose:6.1.1")
     implementation("io.insert-koin:koin-android:3.5.3")
     implementation("io.insert-koin:koin-androidx-compose:3.5.3")
 }

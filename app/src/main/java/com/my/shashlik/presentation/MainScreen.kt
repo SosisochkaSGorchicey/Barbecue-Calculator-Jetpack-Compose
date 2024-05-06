@@ -1,62 +1,43 @@
 package com.my.shashlik.presentation
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
 import com.example.shashlickcompose.R
-import com.my.shashlik.presentation.components.CardElement
-import com.my.shashlik.presentation.components.Header
-import com.my.shashlik.presentation.components.chooseHunger.ChooseHungerUI
-import com.my.shashlik.presentation.components.chooseMeat.ChooseMeatUI
-import com.my.shashlik.presentation.components.choosePeople.ChoosePeopleUI
-import com.my.shashlik.presentation.components.chooseTime.ChooseTimeUI
-import com.my.shashlik.presentation.components.result.ResultUI
+import com.my.shashlik.presentation.mvi.MainScreenSideEffect
+import com.my.shashlik.presentation.mvi.MainViewModel
+import org.koin.androidx.compose.koinViewModel
+import org.orbitmvi.orbit.compose.collectSideEffect
 
 @Composable
-fun MainScreen() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .verticalScroll(rememberScrollState())
-            .padding(20.dp),
-        verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(20.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Header()
+fun MainScreen(mainViewModel: MainViewModel = koinViewModel()) {
+    val context = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
 
-            CardElement(titleTextRes = R.string.choose_meat) {
-                ChooseMeatUI()
-            }
+    mainViewModel.collectSideEffect {
+        when (it) {
+            MainScreenSideEffect.ShowNoPeopleAmountErrorSnackBar -> snackbarHostState.showSnackbar(
+                message = context.getString(R.string.toast_not_all_filled)
+            )
 
-            CardElement(titleTextRes = R.string.choose_people) {
-                ChoosePeopleUI()
-            }
-
-            CardElement(titleTextRes = R.string.choose_time) {
-                ChooseTimeUI()
-            }
-
-            CardElement(titleTextRes = R.string.choose_hunger) {
-                ChooseHungerUI()
-            }
+            MainScreenSideEffect.ShowAmountErrorSnackBar -> snackbarHostState.showSnackbar(
+                message = context.getString(R.string.toast_people)
+            )
         }
+    }
 
-        ResultUI()
+    Scaffold(
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        }
+    ) { paddingValues ->
+        MainScreenUI(
+            modifier = Modifier.padding(paddingValues)
+        )
     }
 }

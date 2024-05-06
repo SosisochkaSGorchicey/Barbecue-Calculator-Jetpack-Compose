@@ -20,4 +20,10 @@ sealed class MainScreenEvent {
     data class OnPeopleAmountChange(val newAmount: Int) : MainScreenEvent()
     data class OnTimeCoefChange(val newTimeCoef: Double) : MainScreenEvent()
     data class OnHungerSliderChange(val newSliderValue: Float) : MainScreenEvent()
+    data object CountResult: MainScreenEvent()
+}
+
+sealed class MainScreenSideEffect {
+    data object ShowNoPeopleAmountErrorSnackBar: MainScreenSideEffect()
+    data object ShowAmountErrorSnackBar: MainScreenSideEffect()
 }
