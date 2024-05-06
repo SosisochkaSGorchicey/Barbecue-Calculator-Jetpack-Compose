@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.shashlickcompose.R
+import com.my.shashlik.presentation.mvi.MainScreenEvent
 import com.my.shashlik.presentation.mvi.MainViewModel
 import org.koin.androidx.compose.koinViewModel
 
@@ -43,7 +44,7 @@ fun ResultUI(
                 .background(MaterialTheme.colorScheme.onBackground)
                 .padding(vertical = 8.dp, horizontal = 12.dp),
             text = state.result?.let {
-                stringResource(id = R.string.result, it)
+                stringResource(id = R.string.result, it.toString())
             } ?: stringResource(id = R.string.result_empty),
             color = MaterialTheme.colorScheme.secondaryContainer,
             style = MaterialTheme.typography.titleMedium
@@ -55,7 +56,7 @@ fun ResultUI(
             ),
             shape = RoundedCornerShape(24.dp),
             onClick = {
-
+                mainViewModel.onEvent(MainScreenEvent.CountResult)
             },
         ) {
             Text(

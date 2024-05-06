@@ -1,6 +1,5 @@
 package com.my.shashlik.presentation.components.chooseMeat
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,12 +15,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.my.shashlik.presentation.mvi.MainScreenEvent
 import com.my.shashlik.presentation.mvi.MainViewModel
+import com.my.shashlik.presentation.mvi.MeatType
 import com.my.shashlik.ui.theme.CardTextColorHint
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun RowScope.MeatImage(
-    @DrawableRes imageRes: Int,
+    meatType: MeatType,
     mainViewModel: MainViewModel = koinViewModel()
 ) {
     val state by mainViewModel.container.stateFlow.collectAsState()
@@ -31,13 +31,13 @@ fun RowScope.MeatImage(
             .clip(shape = RoundedCornerShape(22.dp))
             .weight(1f)
             .background(
-                if (state.chosenImageRes == imageRes) CardTextColorHint
+                if (state.meatType == meatType) CardTextColorHint
                 else Color.Transparent
             )
             .clickable {
-                mainViewModel.onEvent(MainScreenEvent.OnMeatClick(newImageRes = imageRes))
+                mainViewModel.onEvent(MainScreenEvent.OnMeatClick(meatType = meatType))
             },
-        painter = painterResource(id = imageRes),
+        painter = painterResource(id = meatType.imageRes),
         contentDescription = null
     )
 }

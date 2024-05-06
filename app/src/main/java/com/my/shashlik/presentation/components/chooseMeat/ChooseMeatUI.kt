@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.shashlickcompose.R
+import com.my.shashlik.presentation.mvi.MeatType
 
 @Composable
 fun ChooseMeatUI() {
@@ -18,19 +18,19 @@ fun ChooseMeatUI() {
         horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         MeatImage(
-            imageRes = R.drawable.cow
+            meatType = MeatType.Cow
         )
 
         MeatImage(
-            imageRes = R.drawable.chicken
+            meatType = MeatType.Chicken
         )
 
         MeatImage(
-            imageRes = R.drawable.pig
+            meatType = MeatType.Pig
         )
 
         MeatImage(
-            imageRes = R.drawable.sheep,
+            meatType = MeatType.Sheep
         )
     }
 }
