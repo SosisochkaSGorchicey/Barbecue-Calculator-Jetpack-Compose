@@ -2,7 +2,6 @@ package com.my.shashlik.presentation.mvi
 
 import androidx.annotation.DrawableRes
 import com.example.shashlickcompose.R
-import com.my.shashlik.presentation.components.MviViewModel
 import org.orbitmvi.orbit.annotation.OrbitExperimental
 import org.orbitmvi.orbit.syntax.simple.blockingIntent
 import org.orbitmvi.orbit.syntax.simple.intent

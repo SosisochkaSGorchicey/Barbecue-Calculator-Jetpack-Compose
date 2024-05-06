@@ -11,7 +11,8 @@ data class MainScreenState(
     val chosenTimeCoef: Double = 0.0,
     val currentSliderPosition: Float = 10f,
     val sliderRange: ClosedFloatingPointRange<Float> = 0f..100f,
-    @DrawableRes val currentSliderThumbImageRes: Int = R.drawable.face_f1
+    @DrawableRes val currentSliderThumbImageRes: Int = R.drawable.face_f1,
+    val result: Double? = null
 )
 
 sealed class MainScreenEvent {

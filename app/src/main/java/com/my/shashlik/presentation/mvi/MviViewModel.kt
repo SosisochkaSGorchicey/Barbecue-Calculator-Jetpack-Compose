@@ -1,4 +1,4 @@
-package com.my.shashlik.presentation.components
+package com.my.shashlik.presentation.mvi
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
