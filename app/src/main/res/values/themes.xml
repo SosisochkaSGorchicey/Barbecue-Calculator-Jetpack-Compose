@@ -2,6 +2,7 @@
 <resources>
 
     <style name="Theme.ShashlickCompose" parent="android:Theme.Material.Light.NoActionBar">
-
+        <item name="android:statusBarColor">#FF450D09</item>
+        <item name="android:navigationBarColor">#FF450D09</item>
     </style>
 </resources>
