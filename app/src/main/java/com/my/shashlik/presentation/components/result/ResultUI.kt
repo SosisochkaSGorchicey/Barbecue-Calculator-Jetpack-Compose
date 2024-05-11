@@ -53,6 +53,7 @@ fun ResultUI(
         Button(
             colors = ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                contentColor = MaterialTheme.colorScheme.onSecondaryContainer
             ),
             shape = RoundedCornerShape(24.dp),
             onClick = {
