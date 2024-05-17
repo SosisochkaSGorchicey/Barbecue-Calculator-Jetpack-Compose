@@ -57,17 +57,17 @@ class MainViewModel : MviViewModel<MainScreenState, Any, MainScreenEvent>(
 
                 in 25f..50f -> state.copy(
                     currentSliderThumbImageRes = R.drawable.face_f2,
-                    currentHungerCoef = 1.0
+                    currentHungerCoef = .1
                 )
 
                 in 50f..75f -> state.copy(
                     currentSliderThumbImageRes = R.drawable.face_f3,
-                    currentHungerCoef = 1.5
+                    currentHungerCoef = .2
                 )
 
                 else -> state.copy(
                     currentSliderThumbImageRes = R.drawable.face_f4,
-                    currentHungerCoef = 2.0
+                    currentHungerCoef = .3
                 )
             }
         }
